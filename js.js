@@ -1,13 +1,18 @@
-const bodyBcg = document.querySelector('body');
-const Btn = document.querySelector('.colorBtn');
-const Colors = ['yellow','red','blue','green'];
-const Color = ['green', 'blue', 'red','yellow'];
+const hexNumber = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+const BodyBcg = document.querySelector('body');
+const Btnbtn = document.querySelector('.colorBtn');
+const hexNam = document.querySelector('.hex');
 
-Btn.addEventListener('click', ChangeColor);
+Btnbtn.addEventListener('click',changeColor);
 
-function ChangeColor() {
-    let ranDom = Math.floor(Math.random()*Colors.length)
-    let ranDo = Math.floor(Math.random()*Colors.length)
-    bodyBcg.style.backgroundColor = Colors[ranDom];
-    Btn.style.backgroundColor = Colors[ranDo];
+function changeColor() {
+    let hexCol = '#';
+    for(i=0; i<6; i++) {
+        let Random = Math.floor(Math.random() * hexNumber.length);
+        hexCol += hexNumber[Random];
+    }
+    
+
+    BodyBcg.style.backgroundColor = hexCol
+    hexNam.innerHTML = hexCol;
 }
